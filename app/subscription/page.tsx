@@ -1,6 +1,4 @@
 const Subscription = () => {
-    return (
-        <div>Subscription</div>
-    )
+	return <div>Subscription</div>
 }
 export default Subscription;

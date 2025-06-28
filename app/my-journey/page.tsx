@@ -1,6 +1,4 @@
 const MyJourney = () => {
-    return (
-        <div>MyJourney</div>
-    )
+	return <div>MyJourney</div>
 }
 export default MyJourney;
