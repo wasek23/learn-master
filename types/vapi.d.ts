@@ -2,18 +2,18 @@ enum MessageTypeEnum {
 	TRANSCRIPT = 'transcript',
 	FUNCTION_CALL = 'function-call',
 	FUNCTION_CALL_RESULT = 'function-call-result',
-	ADD_MESSAGE = 'add-message',
+	ADD_MESSAGE = 'add-message'
 }
 
 enum MessageRoleEnum {
 	USER = 'user',
 	SYSTEM = 'system',
-	ASSISTANT = 'assistant',
+	ASSISTANT = 'assistant'
 }
 
 enum TranscriptMessageTypeEnum {
 	PARTIAL = 'partial',
-	FINAL = 'final',
+	FINAL = 'final'
 }
 
 interface BaseMessage {

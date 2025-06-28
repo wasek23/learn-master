@@ -163,7 +163,11 @@ body {
 	}
 
 	.input {
-		@apply !border-black !bg-white focus-visible: !ring-0 focus-visible: !border-black !w-full;
+		@apply !border-black !bg-white !w-full;
+	}
+
+	.input:focus-visible {
+		@apply !ring-0 !border-black;
 	}
 
 	.rounded-border {
@@ -182,7 +186,7 @@ body {
 		@apply bg-primary text-white rounded-xl cursor-pointer px-4 py-2 flex items-center gap-2;
 	}
 
-	.navbar {
+	.header {
 		@apply flex items-center justify-between mx-auto w-full px-14 py-4 bg-white max-sm:px-4;
 	}
 
