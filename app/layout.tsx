@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Bricolage_Grotesque } from 'next/font/google';
+import { ClerkProvider } from '@clerk/nextjs';
 
 import './globals.css';
 import Header from '@/components/Header';
@@ -11,7 +12,7 @@ const bricolage = Bricolage_Grotesque({
 
 export const metadata: Metadata = {
 	title: 'Learn Master',
-	description: 'Real-time AI Teaching Platform'
+	description: 'Real-time AI Teaching Platform',
 };
 
 export default function RootLayout({
@@ -21,8 +22,10 @@ export default function RootLayout({
 }>) {
 	return <html lang='en'>
 		<body className={`${bricolage.variable} antialiased`}>
-			<Header />
-			{children}
+			<ClerkProvider appearance={{ variables: { colorPrimary: '#fe5933' } }}>
+				<Header />
+				{children}
+			</ClerkProvider>
 		</body>
 	</html>
 }
