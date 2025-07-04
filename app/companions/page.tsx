@@ -11,8 +11,6 @@ const CompanionsLibrary = async ({ searchParams }: SearchParams) => {
 
 	const companions = await getAllCompanions({ subject, topic });
 
-	console.log({ companions })
-
 	return <main>
 		<section className='flex flex-col justify-between gap-4'>
 			<div className='flex justify-between flex-wrap gap-5'>
