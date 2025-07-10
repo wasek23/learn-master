@@ -7,6 +7,7 @@ import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import { cn, configureAssistant, getSubjectColor } from '@/lib/utils';
 import { vapi } from '@/lib/vapi.sdk';
 import soundwaves from '@/constants/soundwaves.json';
+import { addToSessionHistory } from '@/lib/actions/companion.actions';
 
 enum CallStatus {
 	INACTIVE = 'INACTIVE',
@@ -15,7 +16,7 @@ enum CallStatus {
 	FINISHED = 'FINISHED'
 }
 
-const CompanionComponent = ({ author, created_at, duration, name, style, subject, topic, voice, companionId, userName, userImage }: CompanionComponentProps) => {
+const CompanionComponent = ({ name, style, subject, topic, voice, companionId, userName, userImage }: CompanionComponentProps) => {
 	const [callStatus, setCallStatus] = useState<CallStatus>(CallStatus.INACTIVE);
 	const [isSpeaking, setIsSpeaking] = useState(false);
 	const [isMuted, setIsMuted] = useState(false);
@@ -25,7 +26,10 @@ const CompanionComponent = ({ author, created_at, duration, name, style, subject
 
 	useEffect(() => {
 		const onCallStart = () => setCallStatus(CallStatus.ACTIVE);
-		const onCallEnd = () => setCallStatus(CallStatus.FINISHED);
+		const onCallEnd = () => {
+			setCallStatus(CallStatus.FINISHED);
+			addToSessionHistory(companionId)
+		}
 
 		const onSpeechStart = () => setIsSpeaking(true);
 		const onSpeechEnd = () => setIsSpeaking(false);

@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { SignInButton, SignedIn, SignedOut, UserButton, } from '@clerk/nextjs';
 
-
 import NavItems from './NavItems';
 
 const Header = () => {

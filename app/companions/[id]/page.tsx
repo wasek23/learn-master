@@ -20,7 +20,7 @@ const CompanionSession = async ({ params }: CompanionSessionPageProps) => {
 
 	if (!companion) redirect('/companions');
 
-	const { author, created_at, duration, name, style, subject, topic, voice } = companion;
+	const { duration, name, subject, topic } = companion;
 
 	return <main>
 		<article className='flex justify-between max-md:flex-col p-6 rounded-border'>
