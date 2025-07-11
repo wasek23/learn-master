@@ -199,7 +199,7 @@ body {
 	}
 
 	.companion-limit {
-		@apply items-center justify-center flex flex-col gap-4 w-full min-2xl:w-1/2 pt-20 text-center;
+		@apply items-center justify-center flex flex-col gap-4 w-full py-20 text-center;
 	}
 
 	.companion-section {

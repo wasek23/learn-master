@@ -41,7 +41,7 @@ const MyJourney = async () => {
 					<div className='flex items-center gap-2'>
 						<Image src='/icons/cap.svg' alt='cap' width={22} height={22} />
 
-						<p className='text-2xl font-bold'>{sessionHistory.length}</p>
+						<p className='text-2xl font-bold'>{companions.length}</p>
 					</div>
 
 					<div>Companions Created</div>

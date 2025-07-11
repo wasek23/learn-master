@@ -1,6 +1,6 @@
 'use server';
 
-import { auth } from '@clerk/nextjs/server'
+import { auth } from '@clerk/nextjs/server';
 import { createSupabaseClient } from '../supabase';
 
 export const createCompanion = async (formData: CreateCompanion) => {
@@ -114,4 +114,34 @@ export const getUserCompanions = async (userId: string) => {
 	}
 
 	return data;
+}
+
+export const newCompanionPermissions = async () => {
+	const { userId, has } = await auth();
+	const supabase = createSupabaseClient();
+
+	let limit = 0;
+
+	if (has({ plan: 'pro' })) {
+		return true;
+	} else if (has({ feature: '3_active_companions' })) {
+		limit = 3;
+	} else if (has({ feature: '10_active_companions' })) {
+		limit = 10;
+	}
+
+	const { data, error } = await supabase
+		.from('companions')
+		.select('id', { count: 'exact' })
+		.eq('author', userId);
+
+	if (error) {
+		throw new Error(error.message)
+	}
+
+	if (data?.length >= limit) {
+		return false;
+	} else {
+		return true;
+	}
 }
