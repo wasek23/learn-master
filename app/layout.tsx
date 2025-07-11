@@ -4,6 +4,7 @@ import { ClerkProvider } from '@clerk/nextjs';
 
 import './globals.css';
 import Header from '@/components/Header';
+import { currentUser } from '@clerk/nextjs/server';
 
 const bricolage = Bricolage_Grotesque({
 	variable: '--font-bricolage',
