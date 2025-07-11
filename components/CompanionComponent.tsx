@@ -42,6 +42,7 @@ const CompanionComponent = ({ name, style, subject, topic, voice, companionId, u
 			}
 		}
 
+		// eslint-disable-next-line no-console
 		const onError = (error: Error) => console.error(error);
 
 		vapi.on('call-start', onCallStart);

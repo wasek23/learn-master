@@ -41,6 +41,7 @@ const CompanionForm = () => {
 		if (companion) {
 			redirect(`/companions/${companion.id}`);
 		} else {
+			// eslint-disable-next-line no-console
 			console.error('Failed to create companion');
 			redirect('/');
 		}
