@@ -89,7 +89,7 @@ const CompanionComponent = ({ name, style, subject, topic, voice, companionId, u
 			serverMessages: []
 		}
 
-		// @ts-expect-error
+		// @ts-expect-error vapi.start may have incompatible types with configureAssistant output
 		vapi.start(configureAssistant(voice, style), assistantOverrides);
 	}
 

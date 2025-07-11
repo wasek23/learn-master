@@ -26,8 +26,9 @@ const config = [
 	{
 		files: ['**/*.ts', '**/*.tsx'],
 		rules: {
-			// Example: turn off prop-types for TS files
-			'react/prop-types': 'off',
+			'no-unused-vars': 'warn',
+			'no-console': 'warn',
+			'react/prop-types': 'off' // Example: turn off prop-types for TS files
 		},
 	},
 ];
